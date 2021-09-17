@@ -1,9 +1,9 @@
 {
-  "name": "zonayed.me",
+  "name": "nomangazicse",
   "private": true,
   "description": "My personal portfolio website",
   "version": "2.0.1",
-  "author": "Zonayed Ahmed <zonayedpca@yahoo.com>",
+  "author": "Noman Gazi <nomangazicse@gmail.com>",
   "dependencies": {
     "gatsby": "^2.15.28",
     "gatsby-image": "^2.2.23",
@@ -36,9 +36,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zonayedpca/zonayed.me"
+    "url": "https://github.com/nomangazicse/nomangazicse.me"
   },
   "bugs": {
-    "url": "https://github.com/zonayedpca/zonayed.me/issues"
+    "url": "https://github.com/nomangazicse/nomangazicse.me/issues"
   }
 }
