@@ -1,5 +1,6 @@
 {
-  "name": "nomangazicse",
+  "name": "nomangazicse.me",
+  "homepage": "https://nomangazicse.github.io/nomangazicse.me",
   "private": true,
   "description": "My personal portfolio website",
   "version": "2.0.1",
@@ -13,6 +14,7 @@
     "gatsby-plugin-sharp": "^2.2.27",
     "gatsby-source-filesystem": "^2.1.28",
     "gatsby-transformer-sharp": "^2.2.19",
+    "gh-pages": "^3.2.3",
     "prop-types": "^15.7.2",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
