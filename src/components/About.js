@@ -2,7 +2,7 @@ import React from "react"
 
 import { Container, Title, Button } from "./common"
 
-import profile from "../assets/image/profile.jpg"
+import profile from "../assets/image/profile.gif"
 
 import "./about.css"
 
