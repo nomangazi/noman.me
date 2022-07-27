@@ -68,11 +68,6 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a onClick={handleScroll} href="https://blog.nomangazi.me" target="_blank">
-                About
-              </a>
-            </li>
-            <li>
               <a onClick={handleScroll} href="#skill">
                 Skill
               </a>
@@ -91,9 +86,9 @@ const Header = () => {
               <a
                 target="__blank"
                 rel="noopener noreferrer"
-                href="#"
+                href="https://blog.nomangazi.me"
               >
-                {/* Blog */}
+                Blog
               </a>
             </li>
             <li>
