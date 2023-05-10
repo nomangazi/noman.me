@@ -54,7 +54,7 @@ const Button = ({
 
 Button.defaultProps = {
   title: "Button",
-  link: "https://nomangazicse.me",
+  link: "https://noman.me",
   target: "",
   marginTop: 0,
   marginBottom: 0,
