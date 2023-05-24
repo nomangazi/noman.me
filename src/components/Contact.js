@@ -22,7 +22,7 @@ const Contact = () => {
                 mt="25px"
                 bgColor="#00cf5d"
                 color="#fff"
-                link="mailto:nomangazicse@gmail.com"
+                link="mailto:contact@noman.me"
               />
             </div>
           </div>
@@ -31,13 +31,13 @@ const Contact = () => {
               <li>
                 <h5>Email</h5>
                 <p>
-                  nomangazicse@gmail.com <span>(Recommended)</span>
+                  contact@noman.me <span>(Recommended)</span>
                 </p>
               </li>
               <li>
                 <h5>Skype</h5>
                 <p>
-                  nomangazicse <span>(Slow response)</span>
+                  nomangazicse<span>(Slow response)</span>
                 </p>
               </li>
               <li>
@@ -48,7 +48,7 @@ const Contact = () => {
               </li>
               <li>
                 <h5>Address</h5>
-                <p>Dohar, Tala, Satkhira, Bangladesh - 9420</p>
+                <p>Tala, Satkhira, Bangladesh - 9420</p>
               </li>
             </ul>
           </div>

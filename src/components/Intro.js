@@ -1,7 +1,7 @@
 import React from "react"
 
 import { Container, Title, Button } from "./common"
-
+import myResume from "../data/file/MyResume.pdf"
 import "./intro.css"
 
 const Intro = () => {
@@ -21,7 +21,7 @@ const Intro = () => {
             </ul>
             <div className="action">
               <Button
-                link="https://github.com/nomangazicse/nomangazicse.me/blob/main/src/data/file/MyResume.pdf"
+                link={myResume}
                 target="__blank"
                 bgColor="#00cf5d"
                 title="Get Resume"

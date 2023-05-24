@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Full Stack Developer`,
+    title: `Frontend Developer`,
     description: `My personal portfolio website`,
-    author: `@zonayedpca`,
+    author: `@nomangazicse`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,8 +11,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `zonayed.me`,
-        short_name: `zonayed.me`,
+        name: `noman.me`,
+        short_name: `noman.me`,
         start_url: `/`,
         background_color: `#111a28`,
         theme_color: `#1d293a`,

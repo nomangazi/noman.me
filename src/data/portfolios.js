@@ -1,25 +1,46 @@
+import ipAddress from "../assets/image/ip-website.jpg"
+import blogApp from "../assets/image/blog-website.jpg"
+import weatherApp from "../assets/image/weather-website.jpg"
+import cudaPreview from "../assets/image/cuda-website.jpg"
+
 export const portfolios = {
   Web: [
     {
       type: "featured",
-      name: "js.zonayed.me",
-      image: require("./image/js.zonayed.me.png"),
-      description:
-        "Learn Practical use case of JavaScript in your everyday life, entirely in Bengali",
-      demo: "https://zonayed.js.org",
-      source: "https://github.com/zonayedpca/js.zonayed.me",
-      tools: ["gatsby", "utterances", "travis ci"],
+      name: "Blog",
+      image: blogApp,
+      description: "My personal blog where I write about my experience and knowledge",
+      demo: "https://blog.noman.me",
+      tools: ["HashNode"],
     },
+    {
+      type: "featured",
+      name: "Weather",
+      image: weatherApp,
+      description: "A simple weather app using OpenWeatherMap API",
+      demo: "https://weather.noman.me",
+      source: "https://github.com/nomangazicse/bd-weather",
+      tools: ["HTML5","CSS3", "JavaScript"],
+    },
+    {
+      type: "featured",
+      name: "Cuda Portfolio",
+      image: cudaPreview,
+      description: "A simple portfolio website using HTML5, CSS3, JavaScript, jQuery, Bootstrap",
+      demo: "https://cuda.noman.me",
+      source: "https://github.com/nomangazicse/cudaportfolio",
+      tools: ["HTML5","CSS3", "JavaScript", "jQuery", "Bootstrap"],
+    }
   ],
   Others: [
     {
       type: "featured",
-      name: "Biswasi",
-      image: require("./image/biswasi.jpg"),
-      description:
-        "Cross-platform Mobile app for the Muslim people to remind them about their prayer",
-      demo: "https://play.google.com/store/apps/details?id=com.biswasi",
-      tools: ["react native", "redux"],
+      name: "IP-Address",
+      image: ipAddress,
+      description: "A simple IP Address show",
+      demo: "https://ip.noman.me",
+      source: "https://github.com/nomangazicse/ip-address",
+      tools: ["HTML5","CSS3", "PHP7"],
     }
   ]
 }

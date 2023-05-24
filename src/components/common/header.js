@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useRef, useState } from "react"
 import { FaBars } from "react-icons/fa"
-
+import myResume from "../../data/file/MyResume.pdf"
 import { Container } from "./container"
 import { Logo } from "./logo"
 
@@ -86,7 +86,7 @@ const Header = () => {
               <a
                 target="__blank"
                 rel="noopener noreferrer"
-                href="https://blog.nomangazi.me"
+                href="https://blog.noman.me"
               >
                 Blog
               </a>
@@ -96,7 +96,7 @@ const Header = () => {
                 className="btn-download"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/nomangazicse/nomangazicse.me/blob/main/src/data/file/MyResume.pdf"
+                href={myResume}
               >
                 Resume
               </a>
