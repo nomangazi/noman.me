@@ -1,12 +1,12 @@
 export const skills = {
   Web: [
-    { name: "React", percent: 40 },
+    { name: "React", percent: 10 },
     // { name: "Gatsby", percent: 90 },
     // { name: "Next.JS", percent: 75 },
     // { name: "Node JS", percent: 80 },
     // { name: "Express JS", percent: 90 },
     // { name: "MongoDB", percent: 90 },
-    { name: "MySQL", percent: 50 },
+    // { name: "MySQL", percent: 85 },
   ],
   Others: [
     // { name: "React Native", percent: 85 },

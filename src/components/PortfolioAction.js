@@ -7,7 +7,6 @@ const PortfolioAction = () => {
   let showMoreTimeOut
   let moreTimeOut
   const [title, setTitle] = useState("More")
-  
   const handleMouseOver = () => {
     clearTimeout(moreTimeOut)
     showMoreTimeOut = setTimeout(() => {
