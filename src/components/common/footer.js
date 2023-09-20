@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from "react"
-import { FaAngleUp, FaStar, FaCodeBranch } from "react-icons/fa"
+import { FaAngleUp, FaStar } from "react-icons/fa"
 
 import { Container } from "./container"
 import { languages } from "../../data"
@@ -30,7 +32,7 @@ export const Footer = () => {
               <li>
                 <a
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noreferrer noopener"
                   href="https://github.com/zonayedpca/zonayed.me"
                 >
                   <p>
@@ -41,7 +43,7 @@ export const Footer = () => {
               <li>
                 <a
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noreferrer noopener"
                   href="https://github.com/nomangazicse/nomangazicse.me"
                 >
                   <p>
@@ -51,7 +53,7 @@ export const Footer = () => {
               </li>
             </ul>
             <p>
-              Create By <a className="zonayedVaiName" href="https://zonayed.me" target="_blank">Zonayed Ahamed</a>{" "}
+              Create By <a className="zonayedVaiName" href="https://zonayed.me" target="_blank"  rel="noreferrer noopener">Zonayed Ahamed</a>{" "}
               <span onClick={handleScroll}>
                 <FaAngleUp />
               </span>

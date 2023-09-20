@@ -1,6 +1,6 @@
 export const skills = {
   Web: [
-    { name: "React", percent: 10 },
+    { name: "React", percent: 50 },
     // { name: "Gatsby", percent: 90 },
     // { name: "Next.JS", percent: 75 },
     // { name: "Node JS", percent: 80 },
@@ -21,14 +21,14 @@ export const skills = {
     { name: "SVG", percent: 10 },
   ],
   Programming: [
-    { name: "JavaScript", percent: 50 },
+    { name: "JavaScript", percent: 60 },
     { name: "C", percent: 25 },
     // { name: "C++", percent: 75 },
     { name: "Python", percent: 35 },
     { name: "Java", percent: 10 },
   ],
   Tools: [
-    { name: "Git", percent: 40 },
+    { name: "Git", percent: 60 },
     { name: "Photoshop", percent: 50 },
     // { name: "Illustrator", percent: 70 },
     // { name: "Travis CI", percent: 85 },

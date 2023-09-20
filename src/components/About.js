@@ -2,7 +2,8 @@ import React from "react"
 
 import { Container, Title, Button } from "./common"
 
-import profile from "../assets/image/profile.gif"
+import profile from "./../assets/image/profile.jpg";
+import myResume from "../data/file/MyResume.pdf";
 
 import "./about.css"
 
@@ -24,7 +25,7 @@ const About = () => {
             </p>
             <div className="about-action">
               <Button
-                link="https://github.com/nomangazicse/nomangazicse.me/blob/main/src/data/file/MyResume.pdf"
+                link={myResume}
                 target="_blank"
                 bgColor="#00cf5d"
                 title="Get Resume"

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useRef, useState } from "react"
@@ -58,27 +60,27 @@ const Header = () => {
               </Link>
             </h1>
           </div>
-          <div onClick={() => setMobileNav(!mobileNav)} className="mobile-nav">
+          <div onClick={() => setMobileNav(!mobileNav)} role="button" tabIndex={-1}  className="mobile-nav">
             <FaBars />
           </div>
           <ul className={`menubar ${mobileNav ? "mobilenav-activate" : ""}`}>
             <li>
-              <a onClick={handleScroll} href="#about">
+              <a onClick={handleScroll} role="button" tabIndex={-1} href="#about">
                 About
               </a>
             </li>
             <li>
-              <a onClick={handleScroll} href="#skill">
+              <a onClick={handleScroll} role="button" tabIndex={-1}  href="#skill">
                 Skill
               </a>
             </li>
             <li>
-              <a onClick={handleScroll} href="#portfolio">
+              <a onClick={handleScroll} role="button" tabIndex={-1}  href="#portfolio">
                 Portfolio
               </a>
             </li>
             <li>
-              <a onClick={handleScroll} href="#contact">
+              <a onClick={handleScroll} role="button" tabIndex={-1}  href="#contact">
                 Contact
               </a>
             </li>
@@ -96,7 +98,7 @@ const Header = () => {
                 className="btn-download"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/nomangazicse/nomangazicse.me/blob/main/src/data/file/MyResume.pdf"
+                href="/src/data/file/MyResume.pdf"
               >
                 Resume
               </a>

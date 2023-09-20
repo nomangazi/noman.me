@@ -1,10 +1,10 @@
 {
-  "name": "nomangazicse.me",
-  "homepage": "https://nomangazicse.github.io/nomangazicse.me",
+  "name": "noman.me",
+  "homepage": "https://nomangazi.github.io/noman.me",
   "private": true,
   "description": "My personal portfolio website",
-  "version": "2.0.1",
-  "author": "Noman Gazi <nomangazicse@gmail.com>",
+  "version": "2.8.1",
+  "author": "Noman Gazi <contact@noman.me>",
   "dependencies": {
     "gatsby": "^2.15.28",
     "gatsby-image": "^2.2.23",
@@ -38,9 +38,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nomangazicse/nomangazicse.me"
+    "url": "https://github.com/nomangazi/nomangazi.me"
   },
   "bugs": {
-    "url": "https://github.com/nomangazicse/nomangazicse.me/issues"
+    "url": "https://github.com/nomangazi/nomangazi.me/issues"
   }
 }

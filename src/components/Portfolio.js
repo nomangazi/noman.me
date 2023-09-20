@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from "react"
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
 
@@ -29,6 +31,8 @@ const Portfolio = () => {
               <li
                 onClick={() => setSelectedPortfolio(name)}
                 className={name === selectedPortfolio ? "active" : ""}
+                role="button"
+                tabIndex={-1} 
                 key={name}
               >
                 {name}

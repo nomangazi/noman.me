@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from "react"
-
 import { Container, Title } from "./common"
 
 import { skills } from "../data"
@@ -19,6 +20,8 @@ const Skill = () => {
             {skillsName.map(name => (
               <li
                 onClick={() => setSelectedSkill(name)}
+                tabIndex={-1}
+                role="button"
                 className={name === selectedSkill ? "active" : ""}
                 key={name}
               >
