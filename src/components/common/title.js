@@ -30,7 +30,7 @@ export const Title = ({ title, social, side, height }) => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://codepen.io/nomangazicse"
+              href="https://codepen.io/nomangazi"
             >
               <FaCodepen />
             </a>
