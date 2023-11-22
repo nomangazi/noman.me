@@ -21,7 +21,7 @@ export const Title = ({ title, social, side, height }) => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://github.com/nomangazicse"
+              href="https://github.com/nomangazi"
             >
               <FaGithub />
             </a>
@@ -39,7 +39,7 @@ export const Title = ({ title, social, side, height }) => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://www.linkedin.com/in/nomangazicse"
+              href="https://www.linkedin.com/in/nomangazi"
             >
               <FaLinkedinIn />
             </a>
@@ -48,7 +48,7 @@ export const Title = ({ title, social, side, height }) => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://medium.com/@nomangazicse"
+              href="https://medium.com/@nomangazi"
             >
               <FaMediumM />
             </a>

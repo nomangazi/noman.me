@@ -44,7 +44,7 @@ export const Footer = () => {
                 <a
                   target="_blank"
                   rel="noreferrer noopener"
-                  href="https://github.com/nomangazicse/nomangazicse.me"
+                  href="https://github.com/nomangazi/noman.me"
                 >
                   <p>
                     {/* <FaCodeBranch /> Fork */}

@@ -88,7 +88,7 @@ const Header = () => {
               <a
                 target="__blank"
                 rel="noopener noreferrer"
-                href="https://blog.nomangazi.me"
+                href="https://blog.noman.me"
               >
                 Blog
               </a>

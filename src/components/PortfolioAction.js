@@ -29,7 +29,7 @@ const PortfolioAction = () => {
     <div className="portfolio-action">
       <Button
         target="__blank"
-        link="https://github.com/nomangazicse"
+        link="https://github.com/nomangazi"
         onMouseOver={handleMouseOver}
         onMouseOut={handleOnMouseOut}
         onClick={handleClick}
