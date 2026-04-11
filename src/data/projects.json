@@ -1,0 +1,33 @@
+[
+  {
+    "slug": "beyondrxaid",
+    "title": "BeyondRxAid",
+    "summary": "Healthcare platform for prescription workflows, patient records, and operational reporting.",
+    "description": "Built a .NET backend focused on secure API design, role-based access controls, and reliable data pipelines for healthcare operations.",
+    "category": "backend",
+    "technologies": [".NET", "C#", "SQL Server", "Docker"],
+    "tags": ["Backend", "Healthcare", "API"],
+    "image": "/images/beyondrxaid.png",
+    "links": {
+      "live": "https://beyondrxaid.example.com",
+      "repository": "https://github.com/noman-gazi/beyondrxaid"
+    },
+    "featured": true
+  },
+  {
+    "slug": "finance-wallet",
+    "title": "Finance Wallet",
+    "summary": "Personal finance tracker for budgeting, transactions, and monthly spending insights.",
+    "description": "Developed a Laravel and PostgreSQL application emphasizing data modeling, transactional integrity, and efficient reporting queries.",
+    "category": "fullstack",
+    "technologies": ["Laravel", "PHP", "PostgreSQL", "Tailwind CSS"],
+    "tags": ["Fullstack", "Finance", "PostgreSQL"],
+    "image": "/images/finance-wallet.png",
+    "links": {
+      "live": "https://finance.noman.com",
+      "repository": "https://github.com/noman-gazi/finance-wallet"
+    },
+    "featured": true
+  }
+]
+
