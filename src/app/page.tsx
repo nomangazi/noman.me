@@ -43,7 +43,7 @@ export default function Home() {
           </div>
         </HeroFadeIn>
 
-        <section id="expertise" className="border border-zinc-200 py-24 sm:px-12 dark:border-zinc-800">
+        <HeroFadeIn id="expertise" className="border border-zinc-200 py-24 sm:px-12 dark:border-zinc-800">
           <div className="space-y-10 px-8 sm:px-0">
             <div className="space-y-4">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
@@ -74,9 +74,9 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </HeroFadeIn>
 
-        <section className="mt-24 border border-zinc-200 px-8 py-16 sm:px-12 sm:py-20 dark:border-zinc-800">
+        <HeroFadeIn id="featured-projects" className="mt-24 border border-zinc-200 px-8 py-16 sm:px-12 sm:py-20 dark:border-zinc-800">
           <h2 className="text-3xl font-bold tracking-tighter text-zinc-950 sm:text-4xl dark:text-zinc-50">
             {contactContent.heading}
           </h2>
@@ -94,7 +94,7 @@ export default function Home() {
             copyLabel={contactContent.copyLabel}
             copiedLabel={contactContent.copiedLabel}
           />
-        </section>
+        </HeroFadeIn>
       </div>
     </main>
   );
