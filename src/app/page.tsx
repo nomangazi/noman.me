@@ -11,6 +11,9 @@ export default function Home() {
         <HeroFadeIn className="w-full py-32">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="max-w-3xl space-y-6">
+              <p className="inline-flex items-center border border-zinc-200 px-3 py-1.5 font-mono text-xs text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">
+                {profileHero.availabilityBadge}
+              </p>
               <h1 className="text-6xl font-black tracking-tighter text-zinc-950 sm:text-7xl dark:text-zinc-50">
                 {profileHero.name}
               </h1>
