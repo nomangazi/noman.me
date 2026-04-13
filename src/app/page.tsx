@@ -3,6 +3,7 @@ import HeroFadeIn from "@/components/hero-fade-in";
 import { contactContent } from "@/data/contact";
 import { expertiseContent } from "@/data/expertise";
 import { profileHero } from "@/data/profile";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -23,6 +24,21 @@ export default function Home() {
               <p className="max-w-2xl text-base leading-8 text-zinc-600 dark:text-zinc-400">
                 {profileHero.intro}
               </p>
+
+              <div className="flex flex-wrap items-center gap-4 pt-4">
+                <Link
+                  href="/projects"
+                  className="inline-flex h-12 items-center justify-center border border-zinc-950 bg-zinc-950 px-6 text-sm font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:bg-zinc-800 dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-300"
+                >
+                  View Projects
+                </Link>
+                <a
+                  href="/Noman_Gazi_Software_Engineer.pdf"
+                  className="inline-flex h-12 items-center justify-center border border-zinc-200 px-6 text-sm font-semibold uppercase tracking-[0.14em] text-zinc-950 transition-colors hover:bg-zinc-100 dark:border-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-900"
+                >
+                  Download CV
+                </a>
+              </div>
 
               <div
                 className="pt-10 inline-flex flex-col items-start gap-3 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400"

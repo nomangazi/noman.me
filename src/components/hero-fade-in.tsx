@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
 
-type HeroFadeInProps = React.ComponentPropsWithoutRef<"section">;
+type HeroFadeInProps = HTMLMotionProps<"section">;
 
 const HeroFadeIn = ({ children, className, ...sectionProps }: HeroFadeInProps) => {
   return (
