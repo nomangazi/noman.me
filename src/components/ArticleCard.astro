@@ -1,0 +1,20 @@
+---
+import type { Article } from "../data/types";
+
+interface Props {
+  article: Article;
+}
+const { article } = Astro.props;
+const Wrapper = article.hasFullPost ? "a" : "div";
+const wrapperProps = article.hasFullPost
+  ? { href: `/articles/${article.slug}`, class: "item-card clickable" }
+  : { class: "item-card" };
+---
+
+<Wrapper {...wrapperProps}>
+  <div class="item-top">
+    <h3>{article.title}</h3>
+    <span class="t-date">{article.date}</span>
+  </div>
+  <p>{article.excerpt}</p>
+</Wrapper>

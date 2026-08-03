@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Icon from "../../components/Icon.astro";
+import projectsData from "../../data/projects.json";
+import type { Project } from "../../data/types";
+
+export function getStaticPaths() {
+  return (projectsData as Project[])
+    .filter((p) => p.hasCaseStudy && p.caseStudy)
+    .map((p) => ({ params: { slug: p.slug }, props: { project: p } }));
+}
+
+interface Props {
+  project: Project;
+}
+const { project } = Astro.props;
+const cs = project.caseStudy!;
+---
+
+<BaseLayout title={`${project.name} — Case Study`} description={cs.subtitle}>
+  <main class="view" id="view-case-study">
+    <div class="subpage">
+      <a href="/#projects" class="back-link">
+        <Icon name="back" />
+        Back to projects
+      </a>
+      <h1>{project.name}</h1>
+      <p class="subtitle">{cs.subtitle}</p>
+
+      <div class="meta-grid">
+        <div><div class="info-label">Role</div><div class="info-value">{cs.role}</div></div>
+        <div><div class="info-label">Timeline</div><div class="info-value">{cs.timeline}</div></div>
+        <div><div class="info-label">Stack</div><div class="info-value">{cs.stack}</div></div>
+        <div><div class="info-label">Category</div><div class="info-value">{cs.category}</div></div>
+      </div>
+
+      <div class="diagram-card">
+        <div class="diagram-titlebar">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <span class="label">{project.name} — System Architecture</span>
+        </div>
+        <div class="diagram-grid">
+          {cs.architecture.map((node) => (
+            <div class="diagram-node">
+              <div class="n-title">{node.title}</div>
+              <div class="n-sub">{node.sub}</div>
+            </div>
+          ))}
+        </div>
+        <div class="diagram-caption">{cs.architectureCaption}</div>
+      </div>
+
+      <h2>Overview</h2>
+      <p>{cs.overview}</p>
+
+      <h2>Key architecture &amp; contributions</h2>
+      {cs.contributions.map((contribution, i) => (
+        <>
+          <h3 class="contrib-head"><span class="contrib-num">{i + 1}</span> {contribution.title}</h3>
+          <ul class="contrib-list">
+            {contribution.points.map((point) => <li>{point}</li>)}
+          </ul>
+        </>
+      ))}
+
+      <h2>Before vs after</h2>
+      <table class="diff-table">
+        <thead>
+          <tr><th>Aspect</th><th>Before</th><th>After</th></tr>
+        </thead>
+        <tbody>
+          {cs.beforeAfter.map((row) => (
+            <tr>
+              <td>{row.aspect}</td>
+              <td class="before-val">{row.before}</td>
+              <td class="after-val">{row.after}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <div class="subpage-nav">
+        <span>{cs.prevProjectLabel}</span>
+        <span>{cs.nextProjectLabel}</span>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

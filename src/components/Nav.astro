@@ -1,0 +1,30 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo-mark">NG</a>
+    <div class="nav-links">
+      <a href="/#about">About</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#education">Education</a>
+      <a href="/#skills">Skills</a>
+    </div>
+    <div class="nav-right">
+      <button
+        class="icon-btn"
+        aria-label="Toggle theme"
+        x-data
+        x-on:click="
+          document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        "
+      >
+        <Icon name="moon" class="icon-moon" />
+        <Icon name="sun" class="icon-sun" />
+      </button>
+      <a href="/#connect" class="btn btn-primary btn-sm">Contact Me</a>
+    </div>
+  </div>
+</nav>

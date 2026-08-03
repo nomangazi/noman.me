@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "clean-architecture-in-dotnet",
+    "title": "Clean Architecture in .NET: A Practical Guide",
+    "date": "Jul 20, 2026",
+    "excerpt": "A hands-on look at structuring .NET projects with Clean Architecture — separating concerns without separating your sanity.",
+    "hasFullPost": true,
+    "detail": {
+      "readTime": "9 min read",
+      "content": [
+        { "type": "paragraph", "text": "Clean Architecture is not a new idea. Robert C. Martin formalized it, and the .NET community has been debating its merits ever since. After shipping three production services with it, I've landed on concrete opinions about where it helps and where it gets in the way." },
+        { "type": "heading", "text": "Why Clean Architecture?" },
+        { "type": "paragraph", "text": "The central promise is independence. Your domain logic shouldn't care whether data comes from SQL Server, Redis, or a flat file. Your API layer shouldn't contain business rules. Testability and replaceability follow directly from those constraints." },
+        { "type": "quote", "text": "The dependency rule: source code dependencies must point only inward, toward higher-level policies.", "cite": "— Robert C. Martin" },
+        { "type": "paragraph", "text": "In practice, this means the Domain project references nothing. Application references only Domain. Infrastructure references Application by implementing its interfaces. The API project wires everything together through the DI container." },
+        { "type": "heading", "text": "Domain — pure business logic" },
+        { "type": "paragraph", "text": "The Domain layer holds entities, value objects, and domain events. No framework references, no infrastructure concerns — just the rules of the business, expressed in code." },
+        {
+          "type": "code",
+          "lang": "CSHARP",
+          "code": "public sealed class Order\n{\n    public Guid Id { get; private init; } = Guid.NewGuid();\n    public OrderStatus Status { get; private set; } = OrderStatus.Draft;\n\n    private readonly List<OrderLine> _lines = new();\n    public IReadOnlyList<OrderLine> Lines => _lines.AsReadOnly();\n\n    public Result AddLine(Product product, int quantity)\n    {\n        if (Status != OrderStatus.Draft)\n            return Result.Failure(\"Cannot modify a confirmed order.\");\n\n        _lines.Add(new OrderLine(product, quantity));\n        return Result.Success();\n    }\n\n    public Result Confirm()\n    {\n        if (!_lines.Any())\n            return Result.Failure(\"An order must have at least one line.\");\n\n        Status = OrderStatus.Confirmed;\n        return Result.Success();\n    }\n}"
+        },
+        { "type": "heading", "text": "Application layer — use cases" },
+        { "type": "paragraph", "text": "The Application layer orchestrates domain objects to fulfill use cases. It defines the interfaces that Infrastructure will implement — this inversion is the core of the pattern. Application dictates what it needs; Infrastructure provides it." },
+        {
+          "type": "code",
+          "lang": "CSHARP",
+          "code": "public sealed class CreateOrderHandler : IRequestHandler<CreateOrderCommand, Guid>\n{\n    private readonly IOrderRepository _orders;\n    private readonly IUnitOfWork _unitOfWork;\n\n    public CreateOrderHandler(IOrderRepository orders, IUnitOfWork unitOfWork)\n    {\n        _orders = orders;\n        _unitOfWork = unitOfWork;\n    }\n\n    public async Task<Guid> Handle(\n        CreateOrderCommand command, CancellationToken ct)\n    {\n        var order = Order.Create(command.CustomerId);\n\n        foreach (var line in command.Lines)\n            order.AddLine(line.Product, line.Quantity);\n\n        await _orders.AddAsync(order, ct);\n        await _unitOfWork.SaveChangesAsync(ct);\n\n        return order.Id;\n    }\n}"
+        },
+        { "type": "paragraph", "text": "The handler knows nothing about SQL Server, Entity Framework, or HTTP. It receives a command, applies domain logic, and persists through an abstraction — trivially testable with a mock repository, no database required." },
+        { "type": "heading", "text": "When not to use it" },
+        { "type": "paragraph", "text": "Clean Architecture earns its overhead in systems that evolve — where you might swap an ORM, add a second delivery channel, or need to test in isolation. For a simple CRUD service with five endpoints and a two-year lifespan, it's overkill. Build boring software when the problem is boring." }
+      ],
+      "likeCount": 12,
+      "dislikeCount": 0,
+      "comments": [
+        {
+          "name": "Rahim Hasan",
+          "isAuthor": false,
+          "timeLabel": "2 days ago",
+          "comment": "Great article, Noman! How do you handle database migrations when using this Clean Architecture approach in a CI/CD pipeline?",
+          "reply": false
+        },
+        {
+          "name": "Noman Gazi",
+          "isAuthor": true,
+          "timeLabel": "1 day ago",
+          "comment": "Thanks Rahim! I usually keep migrations in a separate infrastructure project and apply them using EF Core CLI tools during the deployment step of the GitHub Actions pipeline. I'll write a detailed post on this soon!",
+          "reply": true
+        }
+      ]
+    }
+  },
+  {
+    "slug": "rest-api-design-patterns",
+    "title": "REST API Design Patterns I Actually Use",
+    "date": "Jul 5, 2026",
+    "excerpt": "After building APIs at Bikiran and JoulesLabs, these are the patterns that survived contact with production traffic.",
+    "hasFullPost": false,
+    "detail": null
+  }
+]

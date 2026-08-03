@@ -1,0 +1,18 @@
+---
+import Icon from "./Icon.astro";
+import type { Language } from "../data/types";
+
+interface Props {
+  entry: Language;
+}
+const { entry } = Astro.props;
+const cls = entry.placeholder ? "placeholder" : "";
+---
+
+<div class="lang-item">
+  <div class="lang-icon"><Icon name="globe" /></div>
+  <div>
+    <h3 class:list={[cls]}>{entry.name}</h3>
+    <p class:list={[cls]}>{entry.proficiency}</p>
+  </div>
+</div>

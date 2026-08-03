@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Software Engineer L-I",
+    "company": "JoulesLabs · Full-time",
+    "employmentType": "Full-time",
+    "startDate": "Feb 2026",
+    "endDate": "Present",
+    "description": "Leading the development of scalable healthcare and SaaS solutions, focused on enterprise-level engineering and modern backend architecture.",
+    "bullets": [
+      "Own architecture decisions for two core services touching PHI-adjacent data",
+      "Mentoring newer engineers on ASP.NET Core and PostgreSQL patterns"
+    ],
+    "icon": "settings"
+  },
+  {
+    "title": "Software Engineer",
+    "company": "JoulesLabs · Full-time",
+    "employmentType": "Full-time",
+    "startDate": "Nov 2025",
+    "endDate": "Jan 2026",
+    "description": "Played a pivotal role in developing innovative software solutions and collaborating across teams to enhance core system performance.",
+    "bullets": [],
+    "icon": null
+  },
+  {
+    "title": "Software Engineer",
+    "company": "BIKIRAN · Full-time",
+    "employmentType": "Full-time",
+    "startDate": "Jan 2025",
+    "endDate": "Oct 2025",
+    "description": "Engineered complex ERP system modules and optimized database queries for high-traffic enterprise applications.",
+    "bullets": [],
+    "icon": "box"
+  },
+  {
+    "title": "Junior Software Developer",
+    "company": "BIKIRAN · Full-time",
+    "employmentType": "Full-time",
+    "startDate": "Oct 2023",
+    "endDate": "Dec 2024",
+    "description": "Developed and maintained frontend and backend features, significantly improving user experience and system reliability.",
+    "bullets": [],
+    "icon": null
+  },
+  {
+    "title": "Internship Trainee",
+    "company": "BIKIRAN · Internship",
+    "employmentType": "Internship",
+    "startDate": "Feb 2023",
+    "endDate": "Sep 2023",
+    "description": "Gained hands-on experience in full-stack development, assisting in the deployment of internal tools.",
+    "bullets": [
+      "Assisted in developing responsive website interfaces",
+      "Worked with REST APIs and backend integrations"
+    ],
+    "icon": null
+  },
+  {
+    "title": "Industrial Attachment",
+    "company": "BIKIRAN · Internship",
+    "employmentType": "Internship",
+    "startDate": "Oct 2022",
+    "endDate": "Jan 2023",
+    "description": "Foundational training in web development concepts and basic scripting.",
+    "bullets": [],
+    "icon": null
+  }
+]

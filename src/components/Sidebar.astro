@@ -1,0 +1,36 @@
+---
+import Icon from "./Icon.astro";
+import profile from "../data/profile.json";
+
+const factIcons = ["target", "briefcase", "globe"] as const;
+---
+
+<aside class="sidebar">
+  <div class="avatar-circle">{profile.avatarInitials}</div>
+  <h1>{profile.name}</h1>
+  <p class="role">{profile.role}</p>
+  <p class="blurb">{profile.blurb}</p>
+  <div class="sidebar-divider"></div>
+  <div class="fact-list">
+    {profile.facts.map((fact, i) => (
+      <div class="fact-item">
+        <Icon name={factIcons[i] ?? "target"} />
+        <span>{fact}</span>
+      </div>
+    ))}
+  </div>
+  <div class="sidebar-social">
+    <a class="icon-btn" href={profile.socials.github} target="_blank" rel="noopener" aria-label="GitHub"><Icon name="github" /></a>
+    <a class="icon-btn" href={profile.socials.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn"><Icon name="linkedin" /></a>
+    <a class="icon-btn" href={profile.socials.x} target="_blank" rel="noopener" aria-label="X"><Icon name="x" /></a>
+  </div>
+  <div class="sidebar-actions">
+    <a class="btn btn-primary btn-flex1" href={profile.cvUrl}>
+      <Icon name="download" />
+      Download CV
+    </a>
+    <a class="icon-btn" href={`mailto:${profile.email}`} aria-label="Email">
+      <Icon name="mail" />
+    </a>
+  </div>
+</aside>

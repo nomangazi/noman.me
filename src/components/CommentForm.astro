@@ -1,0 +1,68 @@
+---
+import type { ArticleComment } from "../data/types";
+
+interface Props {
+  comments: ArticleComment[];
+}
+const { comments } = Astro.props;
+const initialComments = JSON.stringify(comments);
+---
+
+<div
+  class="discussion"
+  x-data={`{
+    comments: ${initialComments},
+    name: '',
+    email: '',
+    comment: '',
+    submit() {
+      if (!this.name.trim() || !this.comment.trim()) return;
+      this.comments.unshift({
+        name: this.name.trim(),
+        isAuthor: false,
+        timeLabel: 'Just now',
+        comment: this.comment.trim(),
+        reply: false
+      });
+      this.name = ''; this.email = ''; this.comment = '';
+    },
+    initials(n) {
+      return n.split(/\\s+/).map(w => w[0]).join('').substring(0, 2).toUpperCase();
+    }
+  }`}
+>
+  <h2>Leave a comment</h2>
+  <form class="comment-form" x-on:submit.prevent="submit()">
+    <div class="form-row">
+      <div class="field">
+        <label for="c-name">Name *</label>
+        <input type="text" id="c-name" placeholder="Your name" x-model="name" required />
+      </div>
+      <div class="field">
+        <label for="c-email">Email <span class="hint">(optional — will not be published)</span></label>
+        <input type="email" id="c-email" placeholder="you@example.com" x-model="email" />
+      </div>
+    </div>
+    <div class="field" style="margin-bottom: 14px;">
+      <label for="c-comment">Comment</label>
+      <textarea id="c-comment" placeholder="Write your comment here..." x-model="comment" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Post comment</button>
+  </form>
+  <h2>Discussion</h2>
+  <div id="comments-list">
+    <template x-for="(c, index) in comments" x-bind:key="index">
+      <div class="comment" x-bind:class="{ reply: c.reply }">
+        <div class="avatar" x-text="initials(c.name)"></div>
+        <div class="comment-body">
+          <div class="comment-head">
+            <span class="c-name" x-text="c.name"></span>
+            <template x-if="c.isAuthor"><span class="author-badge">AUTHOR</span></template>
+            <span class="c-time" x-text="c.timeLabel"></span>
+          </div>
+          <p x-text="c.comment"></p>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>

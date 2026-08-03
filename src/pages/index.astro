@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Icon from "../components/Icon.astro";
+import TimelineItem from "../components/TimelineItem.astro";
+import EduItem from "../components/EduItem.astro";
+import CertItem from "../components/CertItem.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import LangItem from "../components/LangItem.astro";
+import RecItem from "../components/RecItem.astro";
+import ConnectCard from "../components/ConnectCard.astro";
+import FooterIllustration from "../components/FooterIllustration.astro";
+import FooterBar from "../components/FooterBar.astro";
+
+import profile from "../data/profile.json";
+import experience from "../data/experience.json";
+import education from "../data/education.json";
+import certifications from "../data/certifications.json";
+import skills from "../data/skills.json";
+import projects from "../data/projects.json";
+import articles from "../data/articles.json";
+import languages from "../data/languages.json";
+import recommendations from "../data/recommendations.json";
+import type { Project, Article } from "../data/types";
+---
+
+<BaseLayout title={`${profile.name} — ${profile.role}`}>
+  <main class="view" id="view-home">
+    <div class="page-wrap layout">
+      <Sidebar />
+
+      <div class="main-col">
+        <section class="hero">
+          <h2>{profile.heroHeadline}</h2>
+          <p>{profile.heroBody}</p>
+          <a href="#experience" class="btn btn-primary">
+            View Experience
+            <Icon name="arrow-right" />
+          </a>
+        </section>
+
+        <section class="msection" id="about">
+          <h2>About</h2>
+          <p class="body-text">
+            I'm a backend software engineer with experience building web applications focused on performance, scalability, and reliability. I specialize in designing APIs, working with relational databases, and building backend systems using modern .NET tooling and clean development practices.
+          </p>
+          <p class="key-skills-label">Key skills:</p>
+          <div class="tag-row">
+            {skills.keySkills.map((skill) => <span class="badge">{skill}</span>)}
+          </div>
+        </section>
+
+        <section class="msection" id="experience">
+          <h2>Experience</h2>
+          <div class="timeline">
+            {experience.map((entry) => <TimelineItem entry={entry} />)}
+          </div>
+        </section>
+
+        <section class="msection" id="education">
+          <h2>Education</h2>
+          {education.map((entry) => <EduItem entry={entry} />)}
+        </section>
+
+        <section class="msection" id="certifications">
+          <h2>Certifications</h2>
+          {certifications.map((entry) => <CertItem entry={entry} />)}
+        </section>
+
+        <section class="msection" id="skills">
+          <h2>Skills</h2>
+          <div class="tag-row">
+            {skills.fullSkills.map((skill) => <span class="badge">{skill}</span>)}
+          </div>
+          <p class="key-skills-label" style="margin-top:24px;">Technologies &amp; tools:</p>
+          <div class="tools-row">
+            {skills.tools.map((tool) => <span class="tool-badge" title={tool.label}>{tool.code}</span>)}
+          </div>
+        </section>
+
+        <section class="msection" id="projects">
+          <h2>Featured Projects</h2>
+          {(projects as Project[]).map((project) => <ProjectCard project={project} />)}
+        </section>
+
+        <section class="msection" id="articles">
+          <h2>Articles</h2>
+          {(articles as Article[]).map((article) => <ArticleCard article={article} />)}
+        </section>
+
+        <section class="msection" id="languages">
+          <h2>Languages</h2>
+          {languages.map((entry) => <LangItem entry={entry} />)}
+        </section>
+
+        <section class="msection" id="recommendations">
+          <h2>Recommendations</h2>
+          {recommendations.map((entry) => <RecItem entry={entry} />)}
+        </section>
+
+        <section class="msection connect" id="connect">
+          <h2>Let's Connect</h2>
+          <p>Currently available for full-time roles, freelance work, and collaborations.</p>
+          <div class="connect-cards">
+            <ConnectCard href={`mailto:${profile.email}`} icon="mail" label="Email Me" value={profile.email} />
+            <ConnectCard href={profile.socials.linkedin} icon="linkedin" label="Message Me" value="Connect on LinkedIn" external />
+          </div>
+          <p class="network-label">Join my network:</p>
+          <div class="social-row">
+            <a class="icon-btn" href={profile.socials.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn"><Icon name="linkedin" /></a>
+            <a class="icon-btn" href={profile.socials.x} target="_blank" rel="noopener" aria-label="X"><Icon name="x" /></a>
+            <a class="icon-btn" href={profile.socials.github} target="_blank" rel="noopener" aria-label="GitHub"><Icon name="github" /></a>
+          </div>
+        </section>
+
+        <FooterIllustration />
+      </div>
+    </div>
+
+    <FooterBar />
+  </main>
+</BaseLayout>

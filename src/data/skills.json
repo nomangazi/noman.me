@@ -1,0 +1,47 @@
+{
+  "keySkills": [
+    "ASP.NET Core",
+    "PostgreSQL",
+    "Redis",
+    "Clean Architecture",
+    "Docker",
+    "CI/CD"
+  ],
+  "fullSkills": [
+    ".NET 8/9",
+    "ASP.NET Core",
+    "AWS",
+    "Azure",
+    "C#",
+    "CI/CD",
+    "Clean Architecture",
+    "Dapper",
+    "DDD",
+    "Docker",
+    "Entity Framework Core",
+    "Event-Driven Architecture",
+    "GitHub Actions",
+    "gRPC",
+    "Microservices",
+    "Nginx",
+    "PostgreSQL",
+    "Redis",
+    "SignalR",
+    "SOLID Principles",
+    "SQL Server",
+    "Web API"
+  ],
+  "tools": [
+    { "code": "C#", "label": "C#" },
+    { "code": ".NET", "label": ".NET" },
+    { "code": "TS", "label": "TypeScript" },
+    { "code": "PG", "label": "PostgreSQL" },
+    { "code": "SQL", "label": "SQL Server" },
+    { "code": "RD", "label": "Redis" },
+    { "code": "DK", "label": "Docker" },
+    { "code": "GH", "label": "GitHub Actions" },
+    { "code": "AWS", "label": "AWS" },
+    { "code": "AZ", "label": "Azure" },
+    { "code": "NX", "label": "Nginx" }
+  ]
+}

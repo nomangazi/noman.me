@@ -1,0 +1,20 @@
+{
+  "name": "Noman Gazi",
+  "role": "Backend Software Engineer",
+  "blurb": "Focused on high-performance backend systems, clean architecture, and reliable APIs.",
+  "avatarInitials": "NG",
+  "facts": [
+    "Focus: backend systems & APIs",
+    "3+ years experience",
+    "Open to remote work"
+  ],
+  "socials": {
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "x": "https://x.com"
+  },
+  "email": "contact@noman.me",
+  "cvUrl": "mailto:contact@noman.me?subject=CV%20request",
+  "heroHeadline": "Backend Software Engineer.",
+  "heroBody": "Building reliable APIs and backend systems with C#, .NET Core, and PostgreSQL — the parts of a product that have to work correctly every single time."
+}

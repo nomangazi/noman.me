@@ -1,0 +1,16 @@
+[
+  {
+    "degree": "Add your degree",
+    "institution": "Institution name",
+    "description": "Add a short description of your coursework, thesis, or specialization.",
+    "dateRange": "20XX – 20XX",
+    "placeholder": true
+  },
+  {
+    "degree": "Add your degree",
+    "institution": "Institution name",
+    "description": "Add a short description of your coursework, thesis, or specialization.",
+    "dateRange": "20XX – 20XX",
+    "placeholder": true
+  }
+]

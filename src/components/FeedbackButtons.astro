@@ -1,0 +1,36 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  initialLikeCount: number;
+}
+const { initialLikeCount } = Astro.props;
+---
+
+<div
+  class="feedback-row"
+  x-data={`{
+    liked: false,
+    disliked: false,
+    count: ${initialLikeCount},
+    like() {
+      if (this.liked) { this.count--; this.liked = false; return; }
+      if (this.disliked) this.disliked = false;
+      this.liked = true; this.count++;
+    },
+    dislike() {
+      if (this.liked) { this.count--; this.liked = false; }
+      this.disliked = !this.disliked;
+    }
+  }`}
+>
+  <span class="f-label">Did you find this helpful?</span>
+  <button class="btn btn-outline btn-sm fb-btn" x-bind:class="{ liked: liked }" x-on:click="like()">
+    <Icon name="thumbs-up" />
+    Like <span x-text="count">{initialLikeCount}</span>
+  </button>
+  <button class="btn btn-outline btn-sm fb-btn" x-bind:class="{ liked: disliked }" x-on:click="dislike()">
+    <Icon name="thumbs-down" />
+    Dislike
+  </button>
+</div>

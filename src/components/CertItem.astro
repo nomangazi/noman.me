@@ -1,0 +1,19 @@
+---
+import Icon from "./Icon.astro";
+import type { CertificationEntry } from "../data/types";
+
+interface Props {
+  entry: CertificationEntry;
+}
+const { entry } = Astro.props;
+const cls = entry.placeholder ? "placeholder" : "";
+---
+
+<div class="cert-item">
+  <div class="cert-icon"><Icon name="medal" /></div>
+  <div class="cert-body">
+    <h3 class:list={[cls]}>{entry.name}</h3>
+    <p class:list={[cls]}>{entry.issuer}</p>
+  </div>
+  <span class="cert-ext"><Icon name="external" /></span>
+</div>
