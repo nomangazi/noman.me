@@ -1,0 +1,14 @@
+/* ============ RESPONSIVE ============ */
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; gap: var(--sp-8); padding-top: var(--sp-7); }
+  .sidebar { position: static; display: flex; flex-direction: column; }
+  .hero h2 { font-size: 32px; }
+  .meta-grid { grid-template-columns: 1fr 1fr; }
+  .meta-grid > div:nth-child(2n+1) { border-left: none; }
+  .meta-grid > div:nth-child(n+3) { border-top: 1px solid var(--border); }
+  .nav-links { display: none; }
+  .form-row { grid-template-columns: 1fr; }
+  .connect-cards { grid-template-columns: 1fr; }
+  .diff-table { display: block; overflow-x: auto; white-space: nowrap; }
+  .page-wrap { padding: 0 var(--sp-5); }
+}

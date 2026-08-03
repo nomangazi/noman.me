@@ -1,0 +1,12 @@
+[
+  {
+    "name": "English",
+    "proficiency": "Professional working proficiency",
+    "placeholder": false
+  },
+  {
+    "name": "Add another language",
+    "proficiency": "Proficiency level",
+    "placeholder": true
+  }
+]

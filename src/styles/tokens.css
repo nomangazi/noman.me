@@ -1,0 +1,72 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+input, textarea { font: inherit; color: inherit; }
+
+:root {
+  /* color */
+  --bg: #ffffff;
+  --bg-subtle: #fafafa;
+  --sidebar-bg: #fbfbfb;
+  --fg: #0b0b0c;
+  --fg-muted: #6b6b70;
+  --fg-faint: #9a9aa1;
+  --border: #e9e9ea;
+  --border-strong: #d7d7d9;
+  --card: #ffffff;
+  --primary: #0b0b0c;
+  --primary-fg: #fafafa;
+  --primary-hover: #29292b;
+  --muted-bg: #f3f3f4;
+  --ring: #0b0b0c;
+  --code-bg: #0b0b0c;
+  --code-fg: #e7e7e9;
+
+  /* spacing scale (8px base) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-7: 28px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-14: 56px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+
+  /* radius */
+  --radius-2xl: 1.35rem;
+  --radius-xl: 1rem;
+  --radius-lg: 0.75rem;
+  --radius-md: 0.55rem;
+  --radius-sm: 0.4rem;
+
+  --shadow-sm: 0 1px 2px rgba(10,10,11,0.04);
+  --shadow-md: 0 10px 30px rgba(10,10,11,0.07);
+
+  --font-display: 'Ubuntu', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Ubuntu Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+html.dark {
+  --bg: #0a0a0b; --bg-subtle: #131314; --sidebar-bg: #0d0d0e;
+  --fg: #f7f7f8; --fg-muted: #a6a6ac; --fg-faint: #77777d;
+  --border: #26262a; --border-strong: #3a3a3f; --card: #131314;
+  --primary: #f7f7f8; --primary-fg: #0b0b0c; --primary-hover: #e2e2e4; --muted-bg: #1b1b1d; --ring: #d7d7d9;
+  --code-bg: #000000; --code-fg: #e7e7e9;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.35); --shadow-md: 0 12px 34px rgba(0,0,0,0.5);
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); background: var(--bg); color: var(--fg); font-size: 15.5px; line-height: 1.7; -webkit-font-smoothing: antialiased; letter-spacing: -0.001em; }
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 2px; }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+.view[hidden] { display: none; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+.placeholder { color: var(--fg-faint); font-style: italic; }

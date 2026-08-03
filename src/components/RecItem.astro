@@ -1,0 +1,18 @@
+---
+import type { Recommendation } from "../data/types";
+
+interface Props {
+  entry: Recommendation;
+}
+const { entry } = Astro.props;
+const cls = entry.placeholder ? "placeholder" : "";
+---
+
+<div class="rec-item">
+  <div class="rec-avatar">?</div>
+  <div class="rec-body">
+    <h3 class:list={[cls]}>{entry.recommenderName}</h3>
+    <p class:list={["rec-role", cls]}>{entry.role}</p>
+    <p class:list={["rec-quote", cls]}>{entry.quote}</p>
+  </div>
+</div>

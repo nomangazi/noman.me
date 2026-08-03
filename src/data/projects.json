@@ -1,0 +1,84 @@
+[
+  {
+    "slug": "beyondrxaid",
+    "name": "BeyondRxAid",
+    "dateRange": "2023 – 2025",
+    "description": "HIPAA-compliant healthcare prescription management platform, fully rebuilt from MVC to ASP.NET Core 9 with real-time SignalR notifications and AWS KMS encryption.",
+    "tags": [".NET Core 9", "SQL Server", "Redis", "AWS KMS", "SignalR", "Docker"],
+    "hasCaseStudy": true,
+    "caseStudy": {
+      "subtitle": "HIPAA-compliant healthcare prescription management platform — rebuilt from the ground up.",
+      "role": "Full-Stack Developer / Project Owner",
+      "timeline": "2023 – 2025",
+      "stack": "ASP.NET Core 9, SQL Server, Redis, AWS KMS, Docker, SignalR",
+      "category": "Health-Tech / SaaS",
+      "architecture": [
+        { "title": "Client", "sub": "React / Browser" },
+        { "title": "API", "sub": "ASP.NET Core 9" },
+        { "title": "Cache", "sub": "Redis" },
+        { "title": "Database", "sub": "SQL Server" },
+        { "title": "KMS", "sub": "AWS KMS" },
+        { "title": "Storage", "sub": "S3 / Secrets" }
+      ],
+      "architectureCaption": "High-level system architecture — for illustration",
+      "overview": "BeyondRxAid began as a tightly coupled ASP.NET MVC 5 monolith with no caching layer, no background processing, and a deployment pipeline that required manual IIS restarts. The goal was to rebuild it into a maintainable, HIPAA-compliant system while keeping the existing user base uninterrupted — migrating data, re-architecting service boundaries, and introducing cloud infrastructure without a single extended downtime window.",
+      "contributions": [
+        {
+          "title": "Security & HIPAA compliance",
+          "points": [
+            "Implemented AWS KMS envelope encryption for all PHI fields stored in SQL Server, covering data-at-rest compliance without full-disk overhead.",
+            "Built a custom ASP.NET Core middleware layer that intercepts every request touching protected health information and writes structured entries to an append-only audit log.",
+            "Introduced a consent management service with versioned records, letting the legal team roll out updated privacy policies without developer involvement.",
+            "Replaced plaintext configuration values with AWS Secrets Manager, removing all credentials from source control and CI pipelines."
+          ]
+        },
+        {
+          "title": "Performance & caching",
+          "points": [
+            "Integrated Redis in dual mode — a distributed cache for read-heavy prescription lookups (10× latency improvement) and a pub/sub backbone for real-time status events.",
+            "Used EFCore.BulkExtensions for batch prescription imports, cutting a 45-second bulk insert down to under 3 seconds for 10,000-row payloads.",
+            "Added response compression and HTTP/2 server push for static assets, reducing time-to-first-byte on the patient portal by roughly 40%."
+          ]
+        },
+        {
+          "title": "Background processing",
+          "points": [
+            "Replaced ad-hoc fire-and-forget Task.Run calls with Quartz.NET, giving every background job persistence, retry logic, and a scheduling dashboard.",
+            "Built a SignalR hub that pushes prescription status changes to connected patients in real time, eliminating a 30-second polling loop.",
+            "Separated long-running PDF generation into a dedicated worker service so it no longer blocks the main API thread pool under load."
+          ]
+        },
+        {
+          "title": "Infrastructure & DevOps",
+          "points": [
+            "Authored a multi-stage Dockerfile that reduced the final image from 1.8 GB to 220 MB.",
+            "Set up GitHub Container Registry with Actions workflows for build, test, security scanning, and deploy.",
+            "Deployed to AWS ECS Fargate behind an Application Load Balancer, with auto-scaling tied to CPU and active SignalR connection count.",
+            "Implemented blue-green deployment for zero-downtime releases, validated with smoke tests before traffic cutover."
+          ]
+        }
+      ],
+      "beforeAfter": [
+        { "aspect": "Framework", "before": "ASP.NET MVC 5 (.NET Framework 4.8)", "after": "ASP.NET Core 9 (cross-platform)" },
+        { "aspect": "ORM / Data access", "before": "ADO.NET + raw SQL", "after": "EF Core + EFCore.BulkExtensions" },
+        { "aspect": "Caching", "before": "None", "after": "Redis (distributed cache + pub/sub)" },
+        { "aspect": "Authentication", "before": "Forms Authentication", "after": "JWT Bearer + OAuth 2.0" },
+        { "aspect": "Background jobs", "before": "Windows Service (manual deploy)", "after": "Quartz.NET + ECS worker" },
+        { "aspect": "Real-time updates", "before": "30-second client polling", "after": "SignalR WebSocket hub" },
+        { "aspect": "Encryption", "before": "None (plaintext PHI)", "after": "AWS KMS envelope encryption" },
+        { "aspect": "Deployment", "before": "Manual IIS restart on bare metal", "after": "Docker + ECS Fargate, blue-green" }
+      ],
+      "prevProjectLabel": "← NexoNotes",
+      "nextProjectLabel": "Lumina Metrics →"
+    }
+  },
+  {
+    "slug": "functional-movement-systems",
+    "name": "Functional Movement Systems (FMS)",
+    "dateRange": "2024 – 2025",
+    "description": "Multi-platform health-tech system powering a 40+ module admin portal, a 110-endpoint REST API, and Azure WebJobs for automated billing.",
+    "tags": ["ASP.NET Core", "Web API", "Angular 16", "Azure DevOps", "Azure SQL"],
+    "hasCaseStudy": false,
+    "caseStudy": null
+  }
+]

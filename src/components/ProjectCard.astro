@@ -1,0 +1,30 @@
+---
+import Icon from "./Icon.astro";
+import type { Project } from "../data/types";
+
+interface Props {
+  project: Project;
+}
+const { project } = Astro.props;
+const Wrapper = project.hasCaseStudy ? "a" : "div";
+const wrapperProps = project.hasCaseStudy
+  ? { href: `/projects/${project.slug}`, class: "item-card clickable" }
+  : { class: "item-card" };
+---
+
+<Wrapper {...wrapperProps}>
+  <div class="item-top">
+    <h3>{project.name}</h3>
+    <span class="t-date">{project.dateRange}</span>
+  </div>
+  <p>{project.description}</p>
+  <div class="tag-row">
+    {project.tags.map((tag) => <span class="badge">{tag}</span>)}
+  </div>
+  {project.hasCaseStudy && (
+    <span class="proj-link">
+      View case study
+      <Icon name="arrow-right" />
+    </span>
+  )}
+</Wrapper>

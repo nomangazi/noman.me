@@ -1,0 +1,32 @@
+---
+import Icon from "./Icon.astro";
+import type { ExperienceEntry } from "../data/types";
+
+interface Props {
+  entry: ExperienceEntry;
+}
+const { entry } = Astro.props;
+---
+
+<div class="t-item">
+  <div class="t-rail">
+    {entry.icon ? (
+      <div class="t-icon"><Icon name={entry.icon} /></div>
+    ) : (
+      <div class="t-icon spacer"></div>
+    )}
+  </div>
+  <div>
+    <div class="t-head">
+      <h3>{entry.title}</h3>
+      <span class="t-date">{entry.startDate} — {entry.endDate}</span>
+    </div>
+    <p class="t-company">{entry.company}</p>
+    <p class="t-desc">{entry.description}</p>
+    {entry.bullets.length > 0 && (
+      <ul class="t-bullets">
+        {entry.bullets.map((bullet) => <li>{bullet}</li>)}
+      </ul>
+    )}
+  </div>
+</div>

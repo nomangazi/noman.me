@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Icon from "../../components/Icon.astro";
+import FeedbackButtons from "../../components/FeedbackButtons.astro";
+import CommentForm from "../../components/CommentForm.astro";
+import articlesData from "../../data/articles.json";
+import type { Article } from "../../data/types";
+
+export function getStaticPaths() {
+  return (articlesData as Article[])
+    .filter((a) => a.hasFullPost && a.detail)
+    .map((a) => ({ params: { slug: a.slug }, props: { article: a } }));
+}
+
+interface Props {
+  article: Article;
+}
+const { article } = Astro.props;
+const detail = article.detail!;
+---
+
+<BaseLayout title={article.title} description={article.excerpt}>
+  <main class="view" id="view-article">
+    <div class="subpage">
+      <a href="/#articles" class="back-link">
+        <Icon name="back" />
+        Back to articles
+      </a>
+      <h1>{article.title}</h1>
+      <p class="article-meta">{article.date} · {detail.readTime}</p>
+
+      {detail.content.map((block) => {
+        if (block.type === "paragraph") return <p>{block.text}</p>;
+        if (block.type === "heading") return <h2>{block.text}</h2>;
+        if (block.type === "quote") return <blockquote>{block.text}<cite>{block.cite}</cite></blockquote>;
+        return (
+          <div class="code-block">
+            <div class="code-lang">{block.lang}</div>
+            <pre><code>{block.code}</code></pre>
+          </div>
+        );
+      })}
+
+      <FeedbackButtons initialLikeCount={detail.likeCount} />
+
+      <CommentForm comments={detail.comments} />
+
+      <a href="/#articles" class="back-link bottom">
+        <Icon name="back" />
+        Back to articles
+      </a>
+    </div>
+  </main>
+</BaseLayout>

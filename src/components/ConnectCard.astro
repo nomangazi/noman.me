@@ -1,0 +1,17 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  href: string;
+  icon: "mail" | "linkedin";
+  label: string;
+  value: string;
+  external?: boolean;
+}
+const { href, icon, label, value, external = false } = Astro.props;
+---
+
+<a class="connect-card" href={href} target={external ? "_blank" : undefined} rel={external ? "noopener" : undefined}>
+  <span class="connect-icon"><Icon name={icon} /></span>
+  <span><span class="c-label">{label}</span><br /><span class="c-value">{value}</span></span>
+</a>
