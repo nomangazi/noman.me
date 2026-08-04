@@ -1,16 +1,16 @@
 [
   {
-    "degree": "Add your degree",
-    "institution": "Institution name",
-    "description": "Add a short description of your coursework, thesis, or specialization.",
-    "dateRange": "20XX – 20XX",
-    "placeholder": true
+    "degree": "Bachelor of Science (BSc) in Computer Science & Engineering",
+    "institution": "Bangladesh University",
+    "description": null,
+    "dateRange": "2025 – Present",
+    "placeholder": false
   },
   {
-    "degree": "Add your degree",
-    "institution": "Institution name",
-    "description": "Add a short description of your coursework, thesis, or specialization.",
-    "dateRange": "20XX – 20XX",
-    "placeholder": true
+    "degree": "Diploma in Computer Science",
+    "institution": "Khulna Govt. Polytechnic Institute, Khulna",
+    "description": null,
+    "dateRange": "2018 – 2023",
+    "placeholder": false
   }
 ]

@@ -30,7 +30,7 @@ export interface ExperienceEntry {
 export interface EducationEntry {
   degree: string;
   institution: string;
-  description: string;
+  description: string | null;
   dateRange: string;
   placeholder: boolean;
 }
