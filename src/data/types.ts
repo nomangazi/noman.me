@@ -8,6 +8,7 @@ export interface Profile {
     github: string;
     linkedin: string;
     x: string;
+    facebook: string;
   };
   email: string;
   cvUrl: string;
@@ -29,7 +30,7 @@ export interface ExperienceEntry {
 export interface EducationEntry {
   degree: string;
   institution: string;
-  description: string;
+  description: string | null;
   dateRange: string;
   placeholder: boolean;
 }

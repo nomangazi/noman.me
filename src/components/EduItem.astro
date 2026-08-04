@@ -12,7 +12,7 @@ const cls = entry.placeholder ? "placeholder" : "";
   <div class="edu-left">
     <h3 class:list={[cls]}>{entry.degree}</h3>
     <p class:list={["edu-inst", cls]}>{entry.institution}</p>
-    <p class:list={[cls]}>{entry.description}</p>
+    {entry.description && <p class:list={[cls]}>{entry.description}</p>}
   </div>
   <span class:list={["t-date", cls]}>{entry.dateRange}</span>
 </div>
