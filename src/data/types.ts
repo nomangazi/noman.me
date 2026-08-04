@@ -8,6 +8,7 @@ export interface Profile {
     github: string;
     linkedin: string;
     x: string;
+    facebook: string;
   };
   email: string;
   cvUrl: string;
